@@ -7,6 +7,10 @@ The basic task of this assignment is IViE-corpus_British_Dialects_Classification
 The dataset has 9 folders with 67 audio samples each. The audio samples are narrations of a Cinderella passage by both male and female speakers.
 Phonemes are what differentiate words from one other in a particular dialect/language. By finding patterns in different phonemes which make up a word in different dialects, we can possibly try classifying them.
 
+# Dataset:
+
+The speech corpus IViE (Intonational Variation in English) should be used in the project. The dataset includes nine dialects of  British English, spoken across the nine various regions of the  British Isles. The speech is in read mode i.e. the speakers are reading sentences. The speakers read the cindrella story with intention of investigating cross-varietal and stylistic variations in English intonations across nine regions. The Read_ Up directory has 9 sub-directories (IDR1,IDR2,…..) which has 67 wav files in each sub-directory. The speakers are both male and female. 
+
 
 # Data Processing
 
