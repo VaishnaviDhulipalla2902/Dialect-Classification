@@ -1,20 +1,20 @@
 # Dialect-Classification
 The problem statement of the project is to classify the dialects of British English. There are many dialects in British English language and for the project purpose we consider nine regions (dialects). 
 
-Introduction 
+# Introduction 
 
 The basic task of this assignment is IViE-corpus_British_Dialects_Classification. Dialects are variations in the wordings, the grammar and pronunciations in the same language whereas accents are just variations in pronunciations. 
 The dataset has 9 folders with 67 audio samples each. The audio samples are narrations of a Cinderella passage by both male and female speakers.
 Phonemes are what differentiate words from one other in a particular dialect/language. By finding patterns in different phonemes which make up a word in different dialects, we can possibly try classifying them.
 
 
-Data Processing
+# Data Processing
 
 We broke down our audio samples into small parts (frames) for analysis which approximately contain enough spectral content on how different phonemes make up each word. Length of one frame is taken to be around 25ms to avoid ambiguous nature of the frame.
 We also made sure that there is some overlap (stride) between the frames for correlation between adjacent phonemes. Length of one stride is taken to be 15ms to avoid overfitting or underfitting.
 We applied a hamming window to smoothen out the frame endings and found the power spectrum of each frame for spectral analysis and feature extraction.
 
-Feature Extraction
+# Feature Extraction
 
 Features we took into consideration here are : MFCC, delta and delta-delta coefficients.
 MFCC - Mel Frequency Cepstral Coefficients :
@@ -38,7 +38,7 @@ Here, Filter Bank refers to the mel filters (converting to mel scale) and Cepstr
 Delta and Delta-Delta Coefficients :
 Dialects also have different velocities and acceleration of transition between phonemes. We have created delta coefficients (velocity) and delta-delta coefficients (acceleration) to learn these features.
 
-Training and Observation
+# Training and Observation
 
 We have written down all the coefficient data into pandas DataFrame object which contains 67*9 rows and many columns. We took the mean of each coefficient in each dialect, which gives us 12 average coefficient values for each dialect. This is done because the spectral content of each frame isn’t very important for generalization. It would be more helpful to understand what kind of spectral content is present in the phonemes of each dialect.
 After finding the means, our DataFrame is of the size 67x9 rows and 36 columns. In order to get more insight from the coefficients, we also find the min-value, max value, standard deviation, skewness and median of each of our coefficients. This creates a DataFrame of 67x9 rows and 216 + 1(labels) columns.
